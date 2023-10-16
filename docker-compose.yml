@@ -1,0 +1,24 @@
+version: '3'
+services:
+  app:
+    build:
+      context: . # УКАЗАТЬ ТЕКУЩУЮ ДИРЕКТОРИЮ В КОТОРОЙ НАХОДИТСЯ ПРОЕКТ
+      dockerfile: Dockerfile
+    environment:
+      - DB_URL=postgresql://ИМЯ_ПОЛЬЗОВАТЕЛЯ:ПАРОЛЬ@db/ИМЯ_БД
+    ports:
+      - "8000:80"
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ИМЯ_БД
+      POSTGRES_USER: ИМЯ_ПОЛЬЗОВАТЕЛЯ
+      POSTGRES_PASSWORD: ПАРОЛЬ
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  postgres_data:
+
+
