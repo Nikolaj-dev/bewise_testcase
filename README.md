@@ -16,5 +16,12 @@
 
 ## Пример запроса к серверу
 
+Ubuntu/Debian:
 curl -X POST "http://localhost:8000/get_questions/" -H "Content-Type: application/json" -d '{"questions_num": 3}'
+
+Windows на примере программы Postman:
+http://localhost:8000/get_questions/
+Метод: POST
+В пункте body выбрать тип raw/json
+{"questions_num": 1}
 
