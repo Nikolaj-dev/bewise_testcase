@@ -16,10 +16,13 @@
 
 ## Пример запроса к серверу
 
-Ubuntu/Debian:
-curl -X POST "http://localhost:8000/get_questions/" -H "Content-Type: application/json" -d '{"questions_num": 3}'
+Ubuntu/Debian(обязательно порт 80):
 
-Windows на примере программы Postman:
+Запускаем прямо из терминала приложения в котором находится fastapi
+
+curl -X POST "http://localhost:80/get_questions/" -H "Content-Type: application/json" -d '{"questions_num": 3}'
+
+Windows на примере программы Postman(обязательно порт 8000):
 
 http://localhost:8000/get_questions/
 

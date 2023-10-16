@@ -10,6 +10,9 @@ COPY service /app
 # загрузить все зависимости 
 RUN pip install -r /app/requirements.txt
 
+# Установите curl
+RUN apt-get update && apt-get install -y curl
+
 # порт 80 чтобы можно было обращаться к машине
 EXPOSE 80
 
